@@ -70,5 +70,3 @@ This script is provided for educational and penetration testing purposes only. T
 ## References
 
 - Original Reddit Post: [WatTheFuckIsSecurity on Reddit](https://www.reddit.com/r/networking/comments/65yx3i/a_certain_network_vendor_has_a_front_door_in/)
-
----
