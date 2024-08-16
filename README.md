@@ -1,5 +1,3 @@
----
-
 # Xirrus Access Point Backdoor Automation Script
 
 ## Overview
