@@ -38,7 +38,7 @@ By default, the Xirrus access points use the credentials `admin:admin`. It is st
 ### Script Execution
 
 ```bash
-./xirrus_automate_with_args.exp <host> <username> <password>
+./xirrus_rootshell.exp <host> <username> <password>
 ```
 
 Replace `<host>`, `<username>`, and `<password>` with the appropriate values for your target device.
@@ -46,7 +46,7 @@ Replace `<host>`, `<username>`, and `<password>` with the appropriate values for
 ### Example
 
 ```bash
-./xirrus_automate_with_args.exp 10.34.162.101 admin your_password_here
+./xirrus_rootshell.exp 10.34.162.101 admin your_password_here
 ```
 
 ### What the Script Does
