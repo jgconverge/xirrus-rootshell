@@ -1,5 +1,3 @@
-Here's the updated GitHub README with a note about the default credentials:
-
 ---
 
 # Xirrus Access Point Backdoor Automation Script
